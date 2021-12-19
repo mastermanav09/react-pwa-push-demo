@@ -10,4 +10,5 @@ export default async function swDev() {
     userVisibleOnly: true,
     applicationServerKey: process.env.REACT_APP_PUSH_PUBLIC_VAPID_KEY,
   });
+  console.log(push);
 }
