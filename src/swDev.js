@@ -4,7 +4,9 @@ export default async function swDev() {
     .register(swURL)
     .then((response) => console.warn(response))
     .catch((err) => console.warn(err));
+}
 
+export async function subscribe() {
   let sw = await navigator.serviceWorker.ready;
   let push = await sw.pushManager.getSubscription({
     userVisibleOnly: true,
