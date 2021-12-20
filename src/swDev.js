@@ -8,7 +8,7 @@ export default async function swDev() {
 
 export async function subscribe() {
   let sw = await navigator.serviceWorker.ready;
-  let push = await sw.pushManager.getSubscription({
+  let push = await sw.pushManager.subscribe({
     userVisibleOnly: true,
     applicationServerKey: process.env.REACT_APP_PUSH_PUBLIC_VAPID_KEY,
   });
