@@ -31,6 +31,25 @@ this.addEventListener("fetch", (event) => {
   }
 });
 
-this.addEventListener("push", () => {
-  this.registration.sendNotification("test message", {});
+this.addEventListener("push", (e) => {
+  var options = {
+    body: "This notification was generated from a push.",
+    icon: "/logo192.png",
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: "2",
+    },
+
+    actions: [
+      {
+        action: "explore",
+        title: "Explore this new world",
+        icon: "/logo192.png",
+      },
+      { action: "close", title: "close", icon: "/xmark.png" },
+    ],
+  };
+
+  e.waitUntil(this.registration.sendNotification("Hello world!", options));
 });
