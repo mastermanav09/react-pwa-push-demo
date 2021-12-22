@@ -51,5 +51,5 @@ this.addEventListener("push", (e) => {
     ],
   };
 
-  e.waitUntil(this.registration.sendNotification("Hello world!", options));
+  e.waitUntil(this.registration.showNotification("Hello world!", options));
 });
